@@ -20,7 +20,7 @@ textarea {
 }
 
 .center {
- text_align: center;  
+ text-align: center;  
  h1  {
     margin-bottom: 10px;
   }
@@ -44,7 +44,7 @@ h2 {
   font-size: 1.5em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text_align: center;
+  text-align: center;
   font-weight: normal;
   color: blue;
 }
@@ -53,6 +53,14 @@ p {
   font-size: 1.3em;
   line-height: 1.9em;
 }
+
+/*Home*/
+
+.btn  {
+  text-align: center;
+}
+
+
 
 /*header*/
 
