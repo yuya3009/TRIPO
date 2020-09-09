@@ -1,0 +1,8 @@
+<h1>FC TRICOLORのTRIPO</h1>
+
+<p>Hi <%= @user.name %>,</p>
+
+<p>FC TRICOLORです！！TRICOLORのポイント管理アプリを使うために下のリンクをクリックして</p>
+
+<%= link_to "アカウントを有効にする", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
