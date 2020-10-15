@@ -1,0 +1,7 @@
+<% provide(:title, 'point_use') %>
+
+<p>あなたは<%= @point %>です</P>
+
+<%= form_for(@user) do |f| %>
+<%= f.submit "ポイントを使う", class: "btn btn-primary" %>
+<% end %>

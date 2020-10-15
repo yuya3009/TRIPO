@@ -70,6 +70,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
   
+  test "associated points should be destroyed" do
+    @user.save
+    @user.points.create!(point: 30)
+    assert_difference 'Point.count', -1 do
+      @user.destroy
+    end
+  end
+  
 end
 
 

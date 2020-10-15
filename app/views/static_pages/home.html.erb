@@ -1,8 +1,27 @@
-<div class="center jumbotron">
-<h1>TRIPO</h1>
-<p>FCトリコロールのポイント管理アプリです！！
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="point_history_form">
+        <%= render 'shared/point_histroy_form' %>
+      </section>
+    </aside>
+    
+    <div class="col-md-8">
+      <h3>過去のポイント付与履歴</h3>
+      <%= render 'shared/point_history_form' %>
+    </div>
+  </div>
+  
+<% else %>
+  <div class="center jumbotron">
+  <h1>TRIPO</h1>
+  <p>FCトリコロールのポイント管理アプリです！！
     皆さんのポイントを管理してるっぺ！！
-</p>
+  </p>
 
-<%= link_to "ユーザー登録をする", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+  <%= link_to "ユーザー登録をする", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>

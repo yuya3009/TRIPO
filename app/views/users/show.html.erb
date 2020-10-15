@@ -8,5 +8,14 @@
       </h1>
     </section>
   </aside>
+  
+  <div class="col-md-8">
+     <% if @user.point_histories.any? %>
+      <h3>point_history (<%= @user.point_histories.count %>)</h3>
+      <ol class="points">
+        <p>あなたは<%= @point %>です！</p>
+        <%= render @point_histories %>
+      </ol>
+    <% end %>
+  </div>
 </div>
-

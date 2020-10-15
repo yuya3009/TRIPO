@@ -1,0 +1,2 @@
+class PointBreakdown < ApplicationRecord
+end

@@ -8,6 +8,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
+  has_many :point_histories
+  has_many :points, dependent: :destroy
   validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
   
   # 渡された文字列のハッシュ値を返す
@@ -30,7 +32,7 @@ class User < ApplicationRecord
   
   # 渡されたトークンがダイジェストと一致したらtrueを返す
   def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
+    digest = self.send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
   end
@@ -54,7 +56,8 @@ class User < ApplicationRecord
   # パスワード再設定の属性を設定する
   def create_reset_digest
     self.reset_token = User.new_token
-    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+    update_attribute(:reset_digest,  User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
   end
   
   # パスワード再設定のメールを送信する

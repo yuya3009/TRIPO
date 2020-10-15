@@ -29,10 +29,14 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   config.active_record.migration_error = :page_load
+  
+  config.web_console.whitelisted_ips = '114.185.45.91'
 
   config.assets.debug = true
 
   config.assets.quiet = true
+  
+  config.action_controller.allow_forgery_protection = false
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
