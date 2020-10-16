@@ -1,7 +1,13 @@
 class PointsController < ApplicationController
   before_action :logged_in_user
   
+  def index
+  end
   
+  def create
+  end
+  
+
   def new
     @point = Point.find_by!(params[:point_id])
     @total_amount = amount

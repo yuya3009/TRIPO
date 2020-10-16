@@ -3,12 +3,12 @@ require 'test_helper'
 class UsingPointsTest < ActionDispatch::IntegrationTest
   
   def setup
-    @user = points(:john)
+    @point = points(:john)
   end
 
   test "use points" do
-    get new_point_path
-    assert_template 'points/new'
+    get edit_point_path(@point)
+    assert_template 'points/edit'
     post points_path, params: { point: { point: 250 } }
     assert_equal 200,  user_point.amount
     assert_not flash.empty?
