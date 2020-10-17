@@ -8,7 +8,7 @@ class PointsController < ApplicationController
   end
   
 
-  def new
+  def edit
     @point = Point.find_by!(params[:point_id])
     @total_amount = amount
     if total_amount >= 200
