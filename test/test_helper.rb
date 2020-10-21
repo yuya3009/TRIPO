@@ -4,6 +4,7 @@ require 'rails/test_help'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
+
 class ActiveSupport::TestCase
   fixtures :all
   # テストユーザーがログイン中の場合にtrueを返す
