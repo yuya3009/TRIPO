@@ -10,19 +10,17 @@ class PointsController < ApplicationController
 
   def edit
   p "111111111111111111111"
-    @point = Point.find_by!(params[:point_id])
+    @point = Point.find(params[:point_id])
   p "222222222222222222222"
-    @total_amount = amount
-  p "333333333333333333333"
-    if total_amount >= 200
-      user_point.amount = user_point.amount - total_amount
-      flash[:success] = "#{user_point.amount}を使いました！！"
-      #管理者のメアドに送る
-      @user.save
-      render 'new'
+    if point >= 200
+       user.point = user.point - point
+       flash[:success] = "#{user.point}を使いました！！"
+       #管理者のメアドに送る
+       @user.save
+       render 'new'
     else
-      flash[:danger] = "ポイントは200pt以上で使えます！"
-      render 'new'
+       flash[:danger] = "ポイントは200pt以上で使えます！"
+       render 'new'
     end
   end
   
