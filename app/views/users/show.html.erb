@@ -14,7 +14,7 @@
       <h3>point_history (<%= @user.point_histories.count %>)</h3>
       <ol class="points">
         <p>あなたは<%= @point %>です！</p>
-        <%= link_to "ポイントを使う方はこちらへ", edit_point_path(point.id) %>
+        <%= link_to "ポイントを使う方はこちらへ", points_path(@point.id) %>
         <%= render @point_histories %>
       </ol>
     <% end %>

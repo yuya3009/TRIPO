@@ -5,12 +5,12 @@ class PointsController < ApplicationController
     @points =Point.all
   end
   
-  def create
+  def new
+    @point = Point.new
   end
   
-
-  def edit
-    @point = Point.find(params[:point_id])
+  def create
+    @point = Point.find(params[:id])
     if point >= 200
        user.point = user.point - point
        flash[:success] = "#{user.point}を使いました！！"
@@ -21,6 +21,10 @@ class PointsController < ApplicationController
        flash[:danger] = "ポイントは200pt以上で使えます！"
        redirect to points_url
     end
+  end
+  
+
+  def edit
   end
   
   private

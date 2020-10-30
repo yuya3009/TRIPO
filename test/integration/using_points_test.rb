@@ -8,8 +8,10 @@ class UsingPointsTest < ActionDispatch::IntegrationTest
   end
 
   test "use points" do
-    get edit_point_path(@user)
-    assert_template 'points/edit'
+    get login_path(@user)
+    post login_path, params: { session: { email:    @user.email,
+                                          password: 'password' } }
+    assert_template 'points/create'
     post points_path, params: { point: { point: 250 } }
     assert_equal 200,  user_point.amount
     assert_not flash.empty?
