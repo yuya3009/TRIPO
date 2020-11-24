@@ -10,7 +10,7 @@ class PointsController < ApplicationController
   end
   
   def create
-    @point = Point.find(params[:id])
+    @point = Point.find(params[:point])
     if point >= 200
        user.point = user.point - point
        flash[:success] = "#{user.point}を使いました！！"

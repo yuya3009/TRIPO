@@ -15,7 +15,7 @@ class UsingPointsTest < ActionDispatch::IntegrationTest
     post points_path, params: { point: { point: 250 } }
     assert_equal 200,  user_point.amount
     assert_not flash.empty?
-    @point.save
+    @user.save
     assert_redirected_to controller: :points, action: :show
     #ポイントが少ない場合
     post points_path, params: { point: { point: 150 } }
