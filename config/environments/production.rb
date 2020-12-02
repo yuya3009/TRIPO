@@ -16,10 +16,10 @@ Rails.application.configure do
   host = 'https://tricolor-point-2020.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :port           => ENV['587'],
+    :address        => ENV['smtp.mailgun.org'],
+    :user_name      => ENV['postmaster@sandboxf09a49ea3aa148d58d6b7212136a69f7.mailgun.org'],
+    :password       => ENV['c587f16925e6f8994918729d9cade696-2af183ba-d28751ed'],
     :domain         => host,
     :authentication => :plain,
   }
