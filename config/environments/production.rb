@@ -24,7 +24,7 @@ Rails.application.configure do
     :authentication => :plain,
   }
 
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV['enabled'].present?
 
   config.assets.js_compressor = :uglifier
  
