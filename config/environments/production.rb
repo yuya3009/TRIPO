@@ -16,12 +16,13 @@ Rails.application.configure do
   host = 'https://tricolor-point-2020.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
-    :port           => ENV['587'],
-    :address        => ENV['smtp.mailgun.org'],
-    :user_name      => ENV['postmaster@sandboxf09a49ea3aa148d58d6b7212136a69f7.mailgun.org'],
-    :password       => ENV['c587f16925e6f8994918729d9cade696-2af183ba-d28751ed'],
+    :port           => 587,
+    :address        => 'smtp.sendgrid.net',
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SEDGRID_PASWORD'],
     :domain         => host,
     :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
   config.public_file_server.enabled = ENV['enabled'].present?
