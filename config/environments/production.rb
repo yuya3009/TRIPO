@@ -18,8 +18,8 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
      :port => ENV['587'],
      :address => ENV['smtp.mailgun.org'],
-     :user_name => ENV['postmaster@sandbox75ae8d77863645dda61c935538593863.mailgun.org'],
-     :password => ENV['6593fb00311075f170fdf1b0428c616b-95f6ca46-b4b5eca0'],
+     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
      :domain => host,
      :authentication => :plain,
   }
