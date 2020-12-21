@@ -11,8 +11,8 @@ class UsingPointsTest < ActionDispatch::IntegrationTest
     get login_path(@user)
     post login_path, params: { session: { email:    @user.email,
                                           password: 'password' } }
-    assert_template 'points/create'
-    post points_path, params: { point: { point: 250 } }
+    assert_template 'points/new'
+    get new_point_path, params: { point: { point: 250 } }
     assert_equal 200,  user_point.amount
     assert_not flash.empty?
     @user.save
