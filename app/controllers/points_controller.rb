@@ -2,20 +2,21 @@ class PointsController < ApplicationController
   before_action :logged_in_user
   
   def index
-    @points =Point.all
+    @user_point =Point.all
   end
   
   def new
-    @point = Point.new
+    @user_points = Point.new
   end
   
   def create
-    @point = Point.find(params[:point])
-    if point >= 200
-       user.point = user.point - point
-       flash[:success] = "#{user.point}を使いました！！"
+    @point = Point.find(params[:amount])
+    _total_amount = @amount
+    if _total_amount >= 200 || user_point.amount >= _total_amount
+       user_point.amount = user_point.amount - _total_amount
+       flash[:success] = "#{user_point.amount}を使いました！！"
        #管理者のメアドに送る
-       @point.save
+       @user_point.save
        redirect to points_url
     else
        flash[:danger] = "ポイントは200pt以上で使えます！"

@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 20201009042657) do
     t.index ["user_id"], name: "index_point_histories_on_user_id"
   end
 
-  create_table "points", force: :cascade do |t|
+  create_table "user_points", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "point"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_points_on_user_id"
+    t.index ["user_id"], name: "index_user_points_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

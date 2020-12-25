@@ -1,8 +1,8 @@
 class CreatePoints < ActiveRecord::Migration[5.1]
   def change
-    create_table :points do |t|
+    create_table :user_points do |t|
       t.references :user, foreign_key: true
-      t.integer :point
+      t.integer :amount
       t.timestamps
     end
   end
