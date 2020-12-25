@@ -3,7 +3,13 @@
 
 /*col-md-8*/
 
-.points {
-  text-align: right;
-  margin-bottom: 20px;
+ol {
+  float: right;
+  padding: 10px 10px;
+  p {
+    border: solid 3px; 
+    padding: 10px; 
+    margin-right: 7px;
+    margin-left: 7px;
+  }
 }
