@@ -2,15 +2,15 @@ class PointsController < ApplicationController
   before_action :logged_in_user
   
   def index
-    @user_point =Point.all
+    @user_point =Amount.all
   end
   
   def new
-    @user_points = Point.new
+    @user_points = Amount.new
   end
   
   def create
-    @point = Point.find(params[:amount])
+    @point = Amount.find(params[:amount])
     _total_amount = @amount
     if _total_amount >= 200 || user_point.amount >= _total_amount
        user_point.amount = user_point.amount - _total_amount

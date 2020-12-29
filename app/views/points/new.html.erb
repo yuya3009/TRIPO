@@ -1,8 +1,8 @@
 <% provide(:title, 'point_use') %>
 
-<p>あなたは<%= @point.amount %>です</P>
+<h2>あなたは<%= @amount %>です</h2>
 
-<%= form_with model: @point, url: new_point_path do |f| %>
+<%= form_with model: @amount, url: new_point_path do |f| %>
   <%= f.select :point, [["200", "200"], ["400", "400"], ["600", "600"], ["800", "800"]], include_blank: "選択してくれ！" %>
 
   <%= f.submit "ポイントを使う", class: "btn btn-primary" %>
