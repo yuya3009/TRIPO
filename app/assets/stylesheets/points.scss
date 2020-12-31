@@ -1,12 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*col-md-8*/
+/*point_give*/
 
 ol {
   float: right;
   padding: 10px 10px;
-  p {
+  h3 {
+    float: right;
     border: solid 3px; 
     padding: 10px; 
     margin-right: 7px;

@@ -3,7 +3,7 @@ class CreatePointBreakdowns < ActiveRecord::Migration[5.1]
     create_table :point_breakdowns do |t|
       t.integer :user_point_id
       t.integer :point_history_id
-      t.integer :point
+      t.integer :amount
 
       t.timestamps
     end

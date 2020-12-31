@@ -1,9 +1,9 @@
 john:
-  point: 300
+  amount: 500
   created_at: <%= 10.days.ago %>
   user: michael
   
 most_recent:
-  point: 100
+  amount: 100
   created_at: <%= Time.zone.now %>
   user: michael

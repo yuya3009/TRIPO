@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20201009042657) do
   create_table "point_breakdowns", force: :cascade do |t|
     t.integer "user_point_id"
     t.integer "point_history_id"
-    t.integer "point"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["point_history_id"], name: "index_point_breakdowns_on_point_history_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20201009042657) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "point"
+    t.integer "amount"
     t.index ["user_id"], name: "index_point_histories_on_user_id"
   end
 
