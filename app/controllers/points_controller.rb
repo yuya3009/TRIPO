@@ -3,8 +3,9 @@ class PointsController < ApplicationController
   
   def index
     @user_point =Amount.all
+    @point_histroies = Point_histroy.select("amount")
   end
-  
+
   def new
     @user_points = Amount.new
   end

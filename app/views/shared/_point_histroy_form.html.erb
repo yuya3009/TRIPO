@@ -1,3 +1,5 @@
 <p>あなたの過去のポイント付与履歴</p>
 
-<%= Point_history.amount %>
+<% @point_histroies.each do |point_history| %>
+  <%= point_history.amount %>
+<% end %>
