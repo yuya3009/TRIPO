@@ -5,12 +5,10 @@
 
 .point_give {
   float: right;
-  padding: 10px 10px;
-  
-  h3 {
+  padding: 10px 15px;
+  margin: 7px 5px;
+  .points {
     float: right;
-    border: solid 3px; 
-    padding: 10px; 
-    margin-right: 7px;
-    margin-left: 7px;
+    margin: auto;
+  }
 }
