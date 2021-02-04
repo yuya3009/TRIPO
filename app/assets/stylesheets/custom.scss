@@ -136,11 +136,6 @@ aside {
       border: 0;
       padding-top: 0;
     }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
     h1 {
       font-size: 1.4em;
       text-align: left;
@@ -248,7 +243,7 @@ span.picture {
 .point_give {
   padding: 10px 15px;
   margin: 7px 5px;
-  .points {
+  .current-points {
     display: flex;
     margin: 10px 15px;
   }
