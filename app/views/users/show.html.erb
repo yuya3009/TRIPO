@@ -8,14 +8,11 @@
       </h1>
     </section>
   </aside>
-  
-  <div class="point_give">
-     <% if @user.point_histories.any? %>
-      <ol class="points">
-        <h3>あなたは<%= @user_point.amount %>です！</h3>
-        <%= link_to "ポイントを使う方はこちらへ", "points/new",method: :get %>
-        <%= render @point_histories %>
-      </ol>
-    <% end %>
-  </div>
+</div>
+
+<div class="point_give">
+  <ol class="points">
+    <h3>あなたは<%= @user_point.amount %>です！</h3>
+    <%= link_to "ポイントを使う方はこちらへ", "points/new",method: :get %>
+  </ol>
 </div>
