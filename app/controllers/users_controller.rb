@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @user_points = @user.user_points.pagenate(page: params[:page])
   end
   
   def new

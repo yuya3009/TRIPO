@@ -8,12 +8,15 @@
       </h1>
     </section>
   </aside>
-  
   <div class="point_give">
-    <ol class="current-points">
+    <% if @user.user_points.any? %>
       <h3>あなたは<%= @user_point.amount %>です！</h3>
+      <ol class="current-points">
+        <%= render @user_points %>  
+      </ol>
+      <%= will_paginate @user_points %>
       <%= link_to "ポイントを使う方はこちらへ", "points/new",method: :get %>
-    </ol>
+    <% end %>
   </div>
 </div>
 

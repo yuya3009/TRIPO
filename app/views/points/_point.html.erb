@@ -1,7 +1,7 @@
-<li id="amount-<%= amount.id %>">
-  <%= link_to gravatar_for(point.user, size: 50), point.user %>
-  <span class="user"><%= link_to point.user.name, point.user %></span>
-  <span class="amount"><%= point.amount %></span>
+<li id="user_point-<%= user_point.id %>">
+  <%= link_to gravatar_for(user_point.user, size: 50), user_point.user %>
+  <span class="user"><%= link_to user_point.user.name, user_point.user %></span>
+  <span class="amount"><%= user_point.amount %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(user_points.created_at) %> ago.
   </span>
